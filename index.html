@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rickrolled!</title>
+    <title>Secret page</title>
 </head>
 <body>
-<iframe type="text/html" width="1280" height="720" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&disablekb=1&autoplay=1&loop=1&playlist=dQw4w9WgXcQ&autohide=1" frameborder="0" allow="autoplay" ></iframe>
+    <iframe id="video" type="text/html" width="1280" height="720" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&disablekb=1&autoplay=1&loop=1&playlist=dQw4w9WgXcQ&autohide=1&mute=1" frameborder="0" allow="autoplay" ></iframe>
+    <audio id="rickroll" src="rickroll.mp3" loop="loop"></audio>
+    <button onclick="rickroll()">Do Not Click</button>
+    <script>
+        var audio = new Audio('./rickroll.mp3');
+        window.onload = function() {
+            var iframe = document.getElementById('video');
+            iframe.style.display = 'none';
+
+        }
+
+        function rickroll() {
+            document.title = 'Hah rickrolled!'
+            audio.play();
+            var iframe = document.getElementById('video');
+            iframe.style.display = 'block'
+        }
+    </script>
 </body>
 </html>
